@@ -16,27 +16,32 @@ $(document).ready(function() {
       $('#hotSauce').html(hotSauces[count][0]);
       $('#scovilles').html(hotSauces[count][1] + " Scoville Units");
   
-      for(var i = 0; i < hotSauces.length; i++){
-        clock = new FlipClock($('.clock'), 5, {
-          clockFace: 'MinuteCounter',
-          autoStart: true,
-          countdown: true,
-          callbacks: {
-              stop: function() {
-                  setTimeout(function(){
-                    clock.setTime(5);
-                    clock.start();
-                    // This is only += 0.5 because it's running twice for some reason.
-                    count += 0.5;
-                    $('#hotSauce').html(hotSauces[count][0]);
-                    $('#scovilles').html(hotSauces[count][1] + " Scoville Units");
-                  }, 1000);
-              }
-          }
-        });
-      }
-              // clock.start();
-    });
+      clock = new FlipClock($('.clock'), 5, {
+        clockFace: 'MinuteCounter',
+        autoStart: true,
+        countdown: true,
+        callbacks: {
+            stop: function() {
+                setTimeout(function(){
+                  clock.setTime(5);
+                  clock.start();
+                  count += 1;
+                  $('#hotSauce').html(hotSauces[count][0]);
+                  $('#scovilles').html(hotSauces[count][1] + " Scoville Units");
+                }, 1000);
+            }
+        }
+      });     
 
+      function runFunction() {
+        if(count == hotSauces.length) { 
+          $('#challenge').hide();
+          $('#ending').fadeIn(duration = 1000);
+        }
+      }
+
+      var t=setInterval(runFunction, 10);
+
+    });
     
 });
