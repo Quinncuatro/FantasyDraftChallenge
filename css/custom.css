@@ -11,8 +11,23 @@ body {
   color: #ccc;
 }
 
-.descText {
-  
+#challenge {
+  display: none;
+}
+
+.welcome-text {
+  padding-bottom: 40px;
+}
+
+.button-wrapper {
+  display: inline-block;
+  width: auto;
+}
+
+.btn-primary {
+  color: #ccc;
+  background-color: #333;
+  border-color: #333;
 }
 
 .clock-wrapper {
