@@ -1,0 +1,29 @@
+html, body {
+  height:100%;
+}
+
+body {
+  background-image: url("../images/background.png");
+  display:flex;
+  align-items:center;
+  font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 60px;
+  color: #ccc;
+}
+
+.descText {
+  
+}
+
+.clock-wrapper {
+  text-align: center;
+}
+
+.clock {
+  display: inline-block;
+  width: auto;
+  zoom: 2;
+  -moz-transform: scale(2);
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
